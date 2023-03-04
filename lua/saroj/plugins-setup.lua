@@ -91,6 +91,9 @@ return packer.startup(function(use)
   -- formatting & linting
   use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
   use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
+  use("norcalli/nvim-colorizer.lua") -- A high-performance color highlighter for Neovim
+  -- using packer.nvim
+  use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
 
   -- treesitter configuration
   use({

@@ -28,6 +28,7 @@ local on_attach = function(client, bufnr)
   keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts) -- got to declaration
   keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
   keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts) -- go to implementation
+  keymap.set("n", "gp", "<cmd>Lspsaga preview_definition<CR>", opts) -- go to preivew definition
   keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts) -- see available code actions
   keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts) -- smart rename
   keymap.set("n", "<leader>D", "<cmd>Lspsaga show_line_diagnostics<CR>", opts) -- show  diagnostics for line
@@ -36,6 +37,7 @@ local on_attach = function(client, bufnr)
   keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
   keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
   keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts) -- see outline on right hand side
+  keymap.set("i", "<C-k>", "<Cmd>Lspsaga signature_help<CR>", opts)
 
   -- typescript specific keymaps (e.g. rename file and update imports)
   if client.name == "tsserver" then
@@ -82,6 +84,48 @@ lspconfig["tailwindcss"].setup({
   on_attach = on_attach,
 })
 
+-- configure json server
+lspconfig["jsonls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+-- configure terraformls server
+lspconfig["terraformls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+-- configure graphql server
+lspconfig["graphql"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+-- configure yamlls server
+lspconfig["yamlls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+-- configure vuels server
+lspconfig["vuels"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+-- configure dockerls server
+lspconfig["dockerls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+-- configure eslint server
+lspconfig["eslint"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
 -- configure emmet language server
 lspconfig["emmet_ls"].setup({
   capabilities = capabilities,
@@ -109,3 +153,6 @@ lspconfig["lua_ls"].setup({
     },
   },
 })
+
+-- vim.o.updatetime = 250
+-- vim.cmd([[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]])
