@@ -111,6 +111,9 @@ return packer.startup(function(use)
   -- git integration
   use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
+  -- git management
+  use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
+
   -- zen mode for distraction free code editing
   -- Lua
   use({
