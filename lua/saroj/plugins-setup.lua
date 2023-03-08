@@ -111,6 +111,19 @@ return packer.startup(function(use)
   -- git integration
   use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
+  -- zen mode for distraction free code editing
+  -- Lua
+  use({
+    "folke/zen-mode.nvim",
+    config = function()
+      require("zen-mode").setup({
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      })
+    end,
+  })
+
   if packer_bootstrap then
     require("packer").sync()
   end
