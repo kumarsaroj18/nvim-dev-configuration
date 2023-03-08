@@ -41,6 +41,9 @@ nvimtree.setup({
   view = {
     side = "left",
   },
+  filters = {
+    dotfiles = true,
+  },
   -- 	git = {
   -- 		ignore = false,
   -- 	},
