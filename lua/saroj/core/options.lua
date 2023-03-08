@@ -16,7 +16,7 @@ opt.autoindent = true -- copy indent from current line when starting new one
 opt.smarttab = true
 
 -- line wrapping
-opt.wrap = false -- disable line wrapping
+opt.wrap = true -- disable line wrapping
 
 -- search settings
 opt.ignorecase = true -- ignore case when searching
