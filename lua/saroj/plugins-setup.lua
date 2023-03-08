@@ -114,6 +114,9 @@ return packer.startup(function(use)
   -- git management
   use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
 
+  -- git diff view to show the git difference
+  use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
+
   -- zen mode for distraction free code editing
   -- Lua
   use({

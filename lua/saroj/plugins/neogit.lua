@@ -45,15 +45,15 @@ neogit.setup({
     -- The diffview integration enables the diff popup, which is a wrapper around `sindrets/diffview.nvim`.
     --
     -- Requires you to have `sindrets/diffview.nvim` installed.
-    -- use {
-    --   'TimUntersberger/neogit',
-    --   requires = {
-    --     'nvim-lua/plenary.nvim',
-    --     'sindrets/diffview.nvim'
-    --   }
-    -- }
+    -- use({
+    -- "TimUntersberger/neogit",
+    -- requires = {
+    -- "nvim-lua/plenary.nvim",
+    -- "sindrets/diffview.nvim",
+    -- },
+    -- }),
     --
-    diffview = false,
+    diffview = true,
   },
   -- Setting any section to `false` will make the section not render at all
   sections = {
