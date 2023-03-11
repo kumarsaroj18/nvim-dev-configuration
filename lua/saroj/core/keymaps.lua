@@ -41,8 +41,8 @@ keymap.set("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", {})
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 
 -- nvim-tree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
--- keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
+keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { silent = true }) -- toggle file explorer
+keymap.set("n", "<C-e>", ":NvimTreeFocus<CR>", { silent = true }) -- move cursor to NvimTree
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore

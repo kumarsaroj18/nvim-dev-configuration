@@ -11,6 +11,10 @@ bufferline.setup({
     show_buffer_close_icons = false,
     show_close_icon = false,
     color_icons = true,
+    tabpages = true,
+    auto_hide = true,
+    mouse_wheel_cycle = true,
+    clickable = true,
   },
   highlights = {
     separator = {
