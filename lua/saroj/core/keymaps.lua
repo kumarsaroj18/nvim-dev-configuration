@@ -60,3 +60,6 @@ keymap.set("n", "<leader>ng", "<cmd>Neogit<cr>") -- Open Neogit popup
 
 -- restart lsp server (not on youtube nvim video)
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
+
+-- toggle terminal
+keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<cr>")

@@ -76,6 +76,21 @@ return packer.startup(function(use)
 
   -- configuring lsp servers
   use("neovim/nvim-lspconfig") -- easily configure language servers
+  use({ "nvim-lua/completion-nvim" }) -- required for reactjs project (added as per suggestion from chatgpt)
+  use({ "maxmellon/vim-jsx-pretty" })
+  use({ "peitalin/vim-jsx-typescript" })
+  use({ "mattn/emmet-vim" })
+  use({ "SirVer/ultisnips" })
+
+  --  use({ "akinsho/nvim-toggleterm.lua" }) -- for terminal management i.e. to run the terminal commands when being in the neovim environment
+  use({
+    "akinsho/toggleterm.nvim",
+    tag = "*",
+    config = function()
+      require("toggleterm").setup()
+    end,
+  })
+
   use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
   use({
     "glepnir/lspsaga.nvim",
