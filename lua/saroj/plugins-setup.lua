@@ -77,6 +77,8 @@ return packer.startup(function(use)
   -- configuring lsp servers
   use("neovim/nvim-lspconfig") -- easily configure language servers
   use({ "nvim-lua/completion-nvim" }) -- required for reactjs project (added as per suggestion from chatgpt)
+  use("mfussenegger/nvim-dap") -- debugger plugin
+  use("David-Kunz/jester") -- jest debugger plugin
   use({ "maxmellon/vim-jsx-pretty" })
   use({ "peitalin/vim-jsx-typescript" })
   use({ "mattn/emmet-vim" })

@@ -28,6 +28,13 @@ opt.cursorline = true -- highlight the current cursor line
 
 -- appearance
 
+-- Enable spell checking
+vim.opt.spell = true
+
+-- Enable syntax highlighting
+vim.opt.syntax = "on"
+vim.opt.mouse = "a"
+
 -- turn on termguicolors for nightfly colorscheme to work
 -- (have to use iterm2 or any other true color terminal)
 opt.termguicolors = true

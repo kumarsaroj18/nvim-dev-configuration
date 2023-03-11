@@ -1,6 +1,9 @@
 -- set leader key to space
 vim.g.mapleader = " "
 
+-- Set the path to the Jest executable
+vim.g.jester_jest_command = "./node_modules/.bin/jest"
+
 local keymap = vim.keymap -- for conciseness
 
 ---------------------
@@ -32,6 +35,20 @@ keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 keymap.set("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", {})
 keymap.set("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", {})
+
+-- jester keymappings
+-- Set custom keybindings for Jester
+keymap.set("n", "<Leader>t", ':lua require("jester").run()<CR>', { noremap = true, silent = true }) -- Run nearest test(s) under the cursor
+keymap.set("n", "<Leader>s", ':lua require("jester").run_file()<CR>', { noremap = true, silent = true }) -- Run current file
+keymap.set("n", "<Leader>l", ':lua require("jester").run_last()<CR>', { noremap = true, silent = true }) -- Run last test(s)
+
+keymap.set("n", "<Leader>dt", ':lua require("jester").debug()<CR>', { noremap = true, silent = true }) -- Debug nearest test(s) under the cursor
+keymap.set("n", "<Leader>ds", ':lua require("jester").debug_file()<CR>', { noremap = true, silent = true }) -- Debug current file
+keymap.set("n", "<Leader>dl", ':lua require("jester").debug_last()<CR>', { noremap = true, silent = true }) -- Debug last test(s)
+
+keymap.set("n", "<Leader>so", '<Cmd>lua require("dap").step_over()<CR>', { noremap = true, silent = true }) -- step over while debugging
+keymap.set("n", "<Leader>c", '<Cmd>lua require("dap").continue()<CR>', { noremap = true, silent = true }) -- continue while debugging
+keymap.set("n", "<Leader>tb", '<Cmd>lua require("dap").toggle_breakpoint()<CR>', { noremap = true, silent = true }) -- toggle breakpoint while debugging
 
 ----------------------
 -- Plugin Keybinds
